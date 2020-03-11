@@ -29,4 +29,7 @@
 		<item name="android:colorForeground">#df4a4c
 		</item>
 	</style>
+	<style name="NavigationViewStyle">
+		<item name="android:textColorSecondary">#3AC8E0</item>
+	</style>
 </resources>

@@ -3,6 +3,7 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto">
 
 	<item
+
 		android:id="@+id/actionMenuBatteryID"
 		android:title="@string/battery"
 		android:icon="@drawable/battery100"
@@ -14,27 +15,5 @@
 		android:icon="@drawable/user"
 		app:showAsAction="always"
 		/>
-	<item
-		android:title="option menu"
-		android:icon="@drawable/menu"
-		app:showAsAction="always">
-		<menu>
-			<item
-				android:title="@string/share"
-				android:id="@+id/menuShareID"/>
-			<item
-				android:title="@string/feedback"
-				android:id="@+id/feedbackID"/>
-			<item
-				android:title="@string/about"
-				android:id="@+id/aboutID"/>
-			<item
-				android:id="@+id/exitID"
-				android:title="@string/exit"/>
-			<item
-				android:id="@+id/logOutID"
-				android:title="@string/log_out"
-				/>
-		</menu>
-	</item>
+
 </menu>

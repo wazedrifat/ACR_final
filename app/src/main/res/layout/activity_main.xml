@@ -9,9 +9,25 @@
     android:background="#202124"
     tools:context=".MainActivity">
 
-    <include
-        layout="@layout/activity_toolbar"
-        android:id="@+id/toolbarID"/>
+<!--    <include-->
+<!--        layout="@layout/activity_toolbar"-->
+<!--        android:id="@+id/toolbarID"/>-->
+
+    <ImageView
+        android:layout_marginTop="30dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/app_logo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ACR"
+        android:layout_gravity="center"
+        android:textColor="#3AC8E0"
+        android:textSize="50sp"
+        android:layout_marginTop="30dp"/>
 
     <EditText
         android:backgroundTint="#3AC8E0"
@@ -19,7 +35,7 @@
         android:textColorHint="#97F2F3F3"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:hint="@string/enter_email"
@@ -43,7 +59,17 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         />
-
+    <TextView
+        android:textColorHint="#97F2F3F3"
+        android:id="@+id/forgotPassID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_password"
+        android:layout_gravity="end"
+        android:textColor="#ff22"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        />
     <Button
 
         android:layout_width="wrap_content"

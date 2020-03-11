@@ -1,5 +1,6 @@
 package com.IDP.Group1.acr;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.net.Uri;
@@ -7,6 +8,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -31,8 +34,10 @@ public class actionBar extends AppCompatActivity {
     AppBarConfiguration mAppBarConfiguration;
     private FirebaseAuth mAuth;
     User user;
+    Dialog dialog;
 
     actionBar(){
+
         user = new User();
     }
 
@@ -40,43 +45,18 @@ public class actionBar extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater mi = getMenuInflater();
         mi.inflate(R.menu.activity_menu, menu);
-
+//        dialog = new Dialog(this);
         return super.onCreateOptionsMenu(menu);
 
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menuShareID){
-            ApplicationInfo api = getApplicationContext().getApplicationInfo();
-            String apkPath = api.sourceDir;
 
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("application/vnd.android.package-archive");
-            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(apkPath)));
-            startActivity(Intent.createChooser(intent, "Share app using"));
-        }
-        else if (item.getItemId() == R.id.feedbackID){
-            Intent intent = new Intent(this, feedback.class);
-            startActivity(intent);
-        }
-        else if (item.getItemId() == R.id.aboutID){
-            Intent intent = new Intent(this, about.class);
-            startActivity(intent);
-        }
-        else if(item.getItemId() == R.id.exitID) {
-            finish();
-        }
-        else if (item.getItemId() == R.id.logOutID) {
-            FirebaseAuth.getInstance().signOut();
-            finish();
-
-            Toast.makeText(actionBar.this, "ok sign out", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
-        else if (item.getItemId() == R.id.actionMenuUserID) {
-
+        if (item.getItemId() == R.id.actionMenuUserID) {
+//            Intent intent = new Intent(this, Accounts.class);
+//            startActivity(intent)
+                showPopUp();
         }
         else if (item.getItemId() == R.id.actionMenuBatteryID) {
             Toast.makeText(actionBar.this, "battery clicked", Toast.LENGTH_SHORT).show();
@@ -107,9 +87,30 @@ public class actionBar extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void logOut() {
-        // Write a message to the database
-
+    void showPopUp(View v) {
+        dialog = new Dialog(this);
+        dialog.setContentView(R.layout.activity_accounts);
+        dialog.show();
     }
 
+    public void showPopUp() {
+        dialog = new Dialog(this);
+        dialog.setContentView(R.layout.activity_accounts);
+
+        Button logOut = dialog.findViewById(R.id.logOutID);
+
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                finish();
+
+                Toast.makeText(actionBar.this, "ok sign out", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(actionBar.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        dialog.show();
+    }
 }

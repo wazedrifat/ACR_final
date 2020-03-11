@@ -1,10 +1,14 @@
 package com.IDP.Group1.acr;
 
+import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -16,6 +20,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -26,6 +31,7 @@ import android.view.Menu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.util.Objects;
 
 public class Home extends actionBar {
@@ -55,7 +61,8 @@ public class Home extends actionBar {
 		// menu should be considered as top level destinations.
 		mAppBarConfiguration = new AppBarConfiguration.Builder(
 				R.id.nav_Dashboard, R.id.nav_Clean, R.id.nav_Shedule,
-				R.id.nav_FloorMapping, R.id.nav_KidMode, R.id.nav_analytics, R.id.nav_Setting)
+				R.id.nav_FloorMapping, R.id.nav_KidMode, R.id.nav_analytics,
+				R.id.nav_feedback, R.id.nav_Setting, R.id.nav_about)
 				.setDrawerLayout(drawer)
 				.build();
 		NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -69,6 +76,7 @@ public class Home extends actionBar {
 		userName.setText(user.getName());
 		userEmail.setText(user.getEmail());
 
+
 		navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
 			@Override
 			public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
@@ -76,9 +84,45 @@ public class Home extends actionBar {
 			}
 		});
 
-		getSupportActionBar().setHomeButtonEnabled(true);
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		getSupportActionBar().setHomeAsUpIndicator(R.drawable.app_logo_small);
+//		navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+//			@Override
+//			public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//
+//				if (item.getItemId() == R.id.shareID){
+//					ApplicationInfo api = getApplicationContext().getApplicationInfo();
+//					String apkPath = api.sourceDir;
+//
+//					Intent intent = new Intent(Intent.ACTION_SEND);
+//					intent.setType("application/vnd.android.package-archive");
+//					intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(apkPath)));
+//					startActivity(Intent.createChooser(intent, "Share app using"));
+//				}
+//				else if (item.getItemId() == R.id.feedbackID){
+//					Intent intent = new Intent(Home.class, feedback.class);
+//					startActivity(intent);
+//				}
+//				else if (item.getItemId() == R.id.aboutID){
+//					Intent intent = new Intent(this, about.class);
+//					startActivity(intent);
+//				}
+//				else if(item.getItemId() == R.id.exitID) {
+//					finish();
+//				}
+//				else if (item.getItemId() == R.id.logOutID) {
+//					FirebaseAuth.getInstance().signOut();
+//					finish();
+//
+//					Toast.makeText(actionBar.this, "ok sign out", Toast.LENGTH_SHORT).show();
+//					Intent intent = new Intent(this, MainActivity.class);
+//					startActivity(intent);
+//				}
+//				return true;
+//			}
+//		});
+
+//		getSupportActionBar().setHomeButtonEnabled(true);
+//		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//		getSupportActionBar().setHomeAsUpIndicator(R.drawable.app_logo_small);
 	}
 
 	@Override

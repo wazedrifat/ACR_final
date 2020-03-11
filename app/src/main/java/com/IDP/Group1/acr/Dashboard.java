@@ -66,6 +66,7 @@ public class Dashboard extends Fragment {
 							 Bundle savedInstanceState) {
 
 		View V = inflater.inflate(R.layout.fragment_dashboard, container, false);
+
 		user = new User();
 		aSwitch = V.findViewById(R.id.switchID);
 		alert =V.findViewById(R.id.alertID);

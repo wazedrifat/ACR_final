@@ -6,8 +6,9 @@
     android:background="@color/colorPrimaryDark"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     app:popupTheme="@style/Theme.AppCompat.Light"
-    android:elevation="4dp"
-    app:title="ACR"
+    android:elevation="10dp"
+    app:title="  ACR"
+	app:logo="@drawable/app_logo_small"
     >
 
 </androidx.appcompat.widget.Toolbar>

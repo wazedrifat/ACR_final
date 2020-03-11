@@ -29,10 +29,29 @@
 			android:icon="@drawable/analytics"
 			android:title="@string/analytics"
 			/>
-		<item
-			android:id="@+id/nav_Setting"
-			android:icon="@drawable/setting"
-			android:title="@string/setting" />
+
 	</group>
 
+	<item android:title="System">
+		<menu>
+			<item
+				android:title="@string/share"
+				android:icon="@drawable/share"
+				/>
+			<item
+				android:id="@+id/nav_feedback"
+				android:title="@string/feedback"
+				android:icon="@drawable/feedback"
+				/>
+			<item
+				android:id="@+id/nav_Setting"
+				android:icon="@drawable/setting"
+				android:title="@string/setting" />
+			<item
+				android:id="@+id/nav_about"
+				android:icon="@drawable/about"
+				android:title="@string/about"
+				/>
+		</menu>
+	</item>
 </menu>

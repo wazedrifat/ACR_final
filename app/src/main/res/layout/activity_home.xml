@@ -24,6 +24,7 @@
 		android:layout_gravity="start"
 		android:fitsSystemWindows="true"
 		app:headerLayout="@layout/nav_header_home"
+		android:theme="@style/NavigationViewStyle"
 
 		app:menu="@menu/activity_home_drawer" />
 <!--	<com.google.android.material.tabs.TabLayout-->
