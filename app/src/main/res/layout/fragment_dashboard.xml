@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	tools:context=".Dashboard">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+	>
+		<pl.droidsonroids.gif.GifImageView
+			android:layout_margin="20dp"
+			android:layout_width="match_parent"
+			android:layout_gravity="center_horizontal"
+			android:layout_height="220dp"
+			android:src="@drawable/giphy"
+			/>
+
+		<Switch
+
+			android:layout_marginBottom="30dp"
+			android:theme="@style/SCBSwitch"
+			android:checked="true"
+			android:backgroundTint="#0E97B3"
+			android:gravity="end|bottom"
+			android:layout_gravity="center"
+			android:id="@+id/switchID"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_marginTop="70dp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:layout_gravity="center"
+		>
+
+
+
+
+
+		<LinearLayout
+			android:padding="20dp"
+			android:layout_marginTop="50dp"
+			android:weightSum="4"
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_marginBottom="50dp"
+			>
+
+			<ImageView
+				android:id="@+id/alertID"
+				android:layout_weight="1"
+				android:layout_gravity="center_horizontal"
+				android:layout_width="0dp"
+				android:layout_height="50dp"
+				android:src="@drawable/alert_off"
+				android:padding="6dp"/>
+			<ImageView
+				android:id="@+id/sleepID"
+				android:layout_weight="1"
+				android:layout_gravity="center_horizontal"
+				android:layout_width="0dp"
+				android:layout_height="50dp"
+				android:src="@drawable/sleep_off"
+				android:padding="6dp"/>
+
+			<ImageView
+				android:id="@+id/notificationID"
+				android:layout_weight="1"
+				android:layout_gravity="center_horizontal"
+				android:layout_width="0dp"
+				android:layout_height="50dp"
+				android:src="@drawable/notification"
+				android:padding="6dp"/>
+			<ImageView
+				android:id="@+id/micID"
+				android:layout_weight="1"
+				android:layout_gravity="center_horizontal"
+				android:layout_width="0dp"
+				android:layout_height="50dp"
+				android:src="@drawable/mic_off"
+				android:padding="6dp"/>
+
+
+
+
+
+		</LinearLayout>
+
+
+
+		<com.varunest.sparkbutton.SparkButton
+			android:id="@+id/spark_button"
+			android:layout_marginTop="0dp"
+			android:layout_width="255dp"
+			android:layout_height="200dp"
+
+			android:layout_gravity="center_horizontal"
+			app:sparkbutton_activeImage="@drawable/active"
+			app:sparkbutton_iconSize="70dp"
+			app:sparkbutton_inActiveImage="@drawable/inactive"
+			app:sparkbutton_primaryColor="@color/primary_color"
+			app:sparkbutton_secondaryColor="@color/secondary_color"
+			/>
+
+
+
+
+
+
+	</LinearLayout>
+
+</FrameLayout>
