@@ -32,6 +32,10 @@
 		android:id="@+id/nav_KidMode"
 		android:name="com.IDP.Group1.acr.KidMode"
 		tools:layout="@layout/fragment_kid_mode" />
+	<fragment
+		android:id="@+id/nav_objectDetect"
+		android:name="com.IDP.Group1.acr.ObjectDetect"
+		tools:layout="@layout/fragment_object_detect"/>
 
 	<fragment
 		android:id="@+id/nav_feedback"

@@ -7,6 +7,28 @@ public class User implements java.io.Serializable {
 
 	String name, email, machineID, contactInfo;
 	List<String> notification;
+
+	public int[][] getMap() {
+		return map;
+	}
+
+	public void setMap(int[][] map) {
+		this.map = map;
+	}
+
+	int [][]map = {
+			{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+			{1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{1, 0, 0, 0, 0, 1, 0, 0, 0, 1},
+			{1, 0, 0, 0, 0, 1, 0, 0, 0, 1},
+			{1, 0, 0, 0, 0, 1, 0, 0, 0, 1},
+			{1, 1, 0, 1, 0, 1, 1, 1, 1, 1},
+			{1, 0, 0, 1, 0, 0, 0, 0, 0, 1},
+			{1, 0, 0, 1, 0, 0, 0, 0, 0, 1},
+			{1, 0, 0, 1, 0, 0, 0, 0, 0, 1},
+			{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+	};
+
 	boolean isPowerOn, isSleep, isRinging;
 
 	public String getName() {

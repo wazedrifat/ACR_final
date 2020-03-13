@@ -61,7 +61,7 @@ public class Home extends actionBar {
 		// menu should be considered as top level destinations.
 		mAppBarConfiguration = new AppBarConfiguration.Builder(
 				R.id.nav_Dashboard, R.id.nav_Clean, R.id.nav_Shedule,
-				R.id.nav_FloorMapping, R.id.nav_KidMode, R.id.nav_analytics,
+				R.id.nav_FloorMapping, R.id.nav_KidMode, R.id.nav_analytics, R.id.nav_objectDetect,
 				R.id.nav_feedback, R.id.nav_Setting, R.id.nav_about)
 				.setDrawerLayout(drawer)
 				.build();

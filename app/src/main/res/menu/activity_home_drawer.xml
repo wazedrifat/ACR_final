@@ -29,7 +29,11 @@
 			android:icon="@drawable/analytics"
 			android:title="@string/analytics"
 			/>
-
+		<item
+			android:id="@+id/nav_objectDetect"
+			android:title="@string/object_detection"
+			android:icon="@drawable/objectdetect"
+			/>
 	</group>
 
 	<item android:title="System">
