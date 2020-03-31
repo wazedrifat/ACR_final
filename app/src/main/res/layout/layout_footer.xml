@@ -110,5 +110,17 @@
 					android:id="@+id/buttonFriID"/>
 			</LinearLayout>
 		</FrameLayout>
+		<Button
+			android:id="@+id/cleanigAreaID"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/lightBlue"
+			android:layout_marginLeft="60dp"
+			android:layout_marginRight="60dp"
+			android:layout_gravity="center"
+			android:layout_marginTop="10dp"
+			android:text="@string/select_cleanign_area"
+			android:textColor="@color/black"
+			/>
 	</LinearLayout>
 </LinearLayout>
