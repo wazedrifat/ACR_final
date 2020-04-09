@@ -2,18 +2,23 @@ package com.IDP.Group1.acr;
 
 import android.widget.DatePicker;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+
 class SheduleClass {
 	int hour, minute, date, month, year;
-	int[] day;
+	List<Integer> day;
 	int [][]clean;
 	boolean type, isAM, isEnabled;
 	//0 : one time
 	//1 : weekly
 
-	public SheduleClass(int hour, int minute, int[] day, boolean isAM) {
+	public SheduleClass(int hour, int minute, Integer[] days, boolean isAM) {
 		this.hour = hour;
 		this.minute = minute;
-		this.day = day;
+		this.day = Arrays.asList(days);
 		this.isAM = isAM;
 		this.type = true;
 		this.isEnabled = true;
@@ -35,10 +40,11 @@ class SheduleClass {
 		this.isAM = isAM;
 		this.type = false;
 		this.isEnabled = true;
-		day = new int[7];
+		day = new ArrayList<>();
 		for (int i = 0; i < 7; i++) {
-			day[i] = 0;
+			day.add(i);
 		}
+
 		clean = new int[10][10];
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
@@ -95,12 +101,20 @@ class SheduleClass {
 		this.year = year;
 	}
 
-	public int[] getDay() {
+	public List<Integer> getDay() {
 		return day;
 	}
 
-	public void setDay(int[] day) {
+	public void setDay(List<Integer> day) {
 		this.day = day;
+	}
+
+	public int[][] getClean() {
+		return clean;
+	}
+
+	public void setClean(int[][] clean) {
+		this.clean = clean;
 	}
 
 	public boolean isType() {

@@ -5,7 +5,7 @@
 
 	<TextView
 
-		android:textColor="#97F2F3F3"
+		android:textColor="@color/ash"
 		android:id="@+id/onlyTextID"
 		android:padding="10dp"
 		android:layout_margin="10dp"

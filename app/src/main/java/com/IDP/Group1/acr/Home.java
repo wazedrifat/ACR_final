@@ -21,6 +21,8 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -54,6 +56,8 @@ public class Home extends actionBar {
 		Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.app_name);
 
 		user = new User();
+		user.writeData(user);
+//		Toast.makeText(this, )
 
 		DrawerLayout drawer = findViewById(R.id.drawer_layout);
 		NavigationView navigationView = findViewById(R.id.nav_view);
@@ -124,6 +128,7 @@ public class Home extends actionBar {
 //		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //		getSupportActionBar().setHomeAsUpIndicator(R.drawable.app_logo_small);
 	}
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

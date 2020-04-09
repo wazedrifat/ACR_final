@@ -2,6 +2,11 @@ package com.IDP.Group1.acr;
 
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.w3c.dom.Entity;
 
@@ -273,12 +278,18 @@ public class User implements java.io.Serializable {
 		shedules.add(new SheduleClass(3, 30, a, true));
 	}
 
-//	public void writeData() {
-//		FirebaseFirestore db = FirebaseFirestore.getInstance();
-//		DocumentReference dr = db.document("user/data");
-//		User object = this;
-//		dr.set(object);
-//	}
+	boolean isChar(char c) {
+		return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	}
+	public void writeData(User user) {
+		String p = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+
+		p = p.replace('.', '_');
+		p = p.replace('@', '_');
+
+		DatabaseReference dr = FirebaseDatabase.getInstance().getReference(p);
+		dr.setValue(user);
+	}
 //
 //	public User readData() {
 //		User ret = null;
