@@ -52,4 +52,8 @@
 	<string name="forgot_password">Forgot Password?</string>
 	<string name="object_detection">Object Detection</string>
 	<string name="select_cleanign_area">Select CLeanign Area</string>
+	<string name="setFloor">Set Length &amp; Width</string>
+	<string name="dialog_setFloor">Set Length &amp; Width</string>
+	<string name="dialog_setFloor_change">Change</string>
+	<string name="dialog_setFloor_cancel">Cancel</string>
 </resources>

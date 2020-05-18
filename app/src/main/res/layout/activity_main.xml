@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:background="#202124"
+    android:background="@color/black"
     tools:context=".MainActivity">
 
 <!--    <include-->
@@ -25,14 +25,14 @@
         android:layout_height="wrap_content"
         android:text="ACR"
         android:layout_gravity="center"
-        android:textColor="#3AC8E0"
+        android:textColor="@color/blue"
         android:textSize="50sp"
         android:layout_marginTop="30dp"/>
 
     <EditText
-        android:backgroundTint="#3AC8E0"
-        android:textColor="#97F2F3F3"
-        android:textColorHint="#97F2F3F3"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/ash"
+        android:textColorHint="@color/ash"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="50dp"
@@ -45,9 +45,9 @@
         />
 
     <EditText
-        android:backgroundTint="#3AC8E0"
-        android:textColor="#97F2F3F3"
-        android:textColorHint="#97F2F3F3"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/ash"
+        android:textColorHint="@color/ash"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="30dp"
@@ -60,13 +60,13 @@
         android:paddingBottom="10dp"
         />
     <TextView
-        android:textColorHint="#97F2F3F3"
+        android:textColorHint="@color/ash"
         android:id="@+id/forgotPassID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/forgot_password"
         android:layout_gravity="end"
-        android:textColor="#ff22"
+        android:textColor="@color/red"
         android:textSize="20sp"
         android:layout_marginTop="20dp"
         />
@@ -79,7 +79,7 @@
         android:layout_marginTop="40dp"
         android:text="@string/log_in"
         android:textSize="20sp"
-        android:background="#3AC8E0"
+        android:background="@color/blue"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:paddingLeft="70dp"
@@ -95,7 +95,7 @@
         android:layout_marginTop="40dp"
         android:text="@string/request_acr"
         android:textSize="20sp"
-        android:background="#3AC8E0"
+        android:background="@color/blue"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:paddingLeft="70dp"
@@ -104,14 +104,14 @@
 
 
     <TextView
-        android:textColorHint="#97F2F3F3"
+        android:textColorHint="@color/ash"
         android:id="@+id/errorWarningID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/wrong_username_or_password_entered"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:textColor="#ff22"
+        android:textColor="@color/red"
         android:textSize="20sp"
         android:visibility="invisible"
         />

@@ -56,7 +56,7 @@ public class Home extends actionBar {
 		Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.app_name);
 
 		user = new User();
-		user.writeData(user);
+//		user.writeData(user);
 //		Toast.makeText(this, )
 
 		DrawerLayout drawer = findViewById(R.id.drawer_layout);

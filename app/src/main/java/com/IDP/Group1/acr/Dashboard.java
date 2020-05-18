@@ -1,6 +1,7 @@
 package com.IDP.Group1.acr;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -49,13 +50,13 @@ public class Dashboard extends Fragment {
 	private SpeechRecognizer speechRecognizer;
 	private GridView grid;
 	private User user;
+	ImageView cleanImage;
+	pl.droidsonroids.gif.GifImageView cleanGif;
 
 	boolean isRecording;
 	ImageView alert,sleep,notification,mic,settings, battery;
 	TextView batteryText;
-	Switch aSwitch;
 	boolean isMicOn;
-	com.varunest.sparkbutton.SparkButton clean;
 
 	public Dashboard() {
 		// Required empty public constructor
@@ -68,54 +69,34 @@ public class Dashboard extends Fragment {
 		View V = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
 		user = new User();
-		aSwitch = V.findViewById(R.id.switchID);
 		alert =V.findViewById(R.id.alertID);
 		sleep =V.findViewById(R.id.sleepID);
-		clean =V.findViewById(R.id.spark_button);
+		cleanImage = V.findViewById(R.id.sweep_img);
+		cleanGif = V.findViewById(R.id.sweep_gif);
 		notification =V.findViewById(R.id.notificationID);
 		mic =V.findViewById(R.id.micID);
 
 		isMicOn = false;
 		isRecording = false;
 
-		if (user.isPowerOn) {
-			aSwitch.setChecked(true);
-		}
-		else {
-			aSwitch.setChecked(false);
-		}
-
-		aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+		cleanImage.setOnClickListener(new View.OnClickListener() {
+			@SuppressLint("ShowToast")
 			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				user.isPowerOn = isChecked;
+			public void onClick(View view) {
+				cleanImage.setVisibility(View.GONE);
+				cleanGif.setVisibility(View.VISIBLE);
+				Toast.makeText(getContext(), "image", Toast.LENGTH_SHORT).show();
 			}
 		});
 
-
-//		clean.setOnClickListener(new View.OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-////				try {
-////					sleep(1000);
-////				} catch (InterruptedException e) {
-////					e.printStackTrace();
-////				}
-////				FragmentManager fragmentManager = getFragmentManager();
-////
-////				Clean clean = new Clean();
-////				fragmentManager.beginTransaction()
-////						.replace(R.id.nav_host_fragment, clean).commit();
-////
-//////				FirebaseFirestore db = FirebaseFirestore.getInstance();
-//////				DocumentReference dr = db.document("user/data");
-//////				dr.set(user);
-////
-////				View view = getActivity().findViewById(R.id.nav_host_fragment);
-////				Snackbar.make(view, "Cleaning Right Now. Please Wait", Snackbar.LENGTH_LONG)
-////						.setAction("Action", null).show();
-//			}
-//		});
+		cleanGif.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Toast.makeText(getContext(), "gif", Toast.LENGTH_SHORT).show();
+				cleanImage.setVisibility(View.VISIBLE);
+				cleanGif.setVisibility(View.GONE);
+			}
+		});
 
 		alert.setOnClickListener(new View.OnClickListener() {
 			@Override

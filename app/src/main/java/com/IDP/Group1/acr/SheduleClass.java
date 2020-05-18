@@ -9,16 +9,16 @@ import java.util.List;
 
 class SheduleClass {
 	int hour, minute, date, month, year;
-	List<Integer> day;
+	int[] day;
 	int [][]clean;
 	boolean type, isAM, isEnabled;
 	//0 : one time
 	//1 : weekly
 
-	public SheduleClass(int hour, int minute, Integer[] days, boolean isAM) {
+	public SheduleClass(int hour, int minute, int[] days, boolean isAM) {
 		this.hour = hour;
 		this.minute = minute;
-		this.day = Arrays.asList(days);
+		this.day = days;
 		this.isAM = isAM;
 		this.type = true;
 		this.isEnabled = true;
@@ -40,9 +40,9 @@ class SheduleClass {
 		this.isAM = isAM;
 		this.type = false;
 		this.isEnabled = true;
-		day = new ArrayList<>();
+		day = new int[7];
 		for (int i = 0; i < 7; i++) {
-			day.add(i);
+			day[i] = i;
 		}
 
 		clean = new int[10][10];
@@ -101,11 +101,11 @@ class SheduleClass {
 		this.year = year;
 	}
 
-	public List<Integer> getDay() {
+	public int[] getDay() {
 		return day;
 	}
 
-	public void setDay(List<Integer> day) {
+	public void setDay(int[] day) {
 		this.day = day;
 	}
 

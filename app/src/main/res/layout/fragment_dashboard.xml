@@ -7,34 +7,15 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	tools:context=".Dashboard">
 
-	<LinearLayout
+	<pl.droidsonroids.gif.GifImageView
+		android:layout_margin="20dp"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"
-	>
-		<pl.droidsonroids.gif.GifImageView
-			android:layout_margin="20dp"
-			android:layout_width="match_parent"
-			android:layout_gravity="center_horizontal"
-			android:layout_height="220dp"
-			android:src="@drawable/giphy"
-			/>
-
-		<Switch
-
-			android:layout_marginBottom="30dp"
-			android:theme="@style/SCBSwitch"
-			android:checked="true"
-			android:backgroundTint="#0E97B3"
-			android:gravity="end|bottom"
-			android:layout_gravity="center"
-			android:id="@+id/switchID"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
-	</LinearLayout>
+		android:layout_gravity="center_horizontal"
+		android:layout_height="220dp"
+		android:src="@drawable/giphy"
+		/>
 
 	<LinearLayout
-		android:layout_marginTop="70dp"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="vertical"
@@ -43,17 +24,13 @@
 
 
 
-
-
 		<LinearLayout
 			android:padding="20dp"
-			android:layout_marginTop="50dp"
 			android:weightSum="4"
 			android:orientation="horizontal"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center_horizontal"
-			android:layout_marginBottom="50dp"
 			>
 
 			<ImageView
@@ -95,28 +72,26 @@
 
 
 		</LinearLayout>
+		<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+			<ImageView
+				android:id="@+id/sweep_img"
+				android:layout_width="145dp"
+				android:layout_height="145dp"
+				android:src="@drawable/sweep_image"
+				android:layout_gravity="center"
+				/>
 
-
-
-		<com.varunest.sparkbutton.SparkButton
-			android:id="@+id/spark_button"
-			android:layout_marginTop="0dp"
-			android:layout_width="255dp"
-			android:layout_height="200dp"
-
-			android:layout_gravity="center_horizontal"
-			app:sparkbutton_activeImage="@drawable/active"
-			app:sparkbutton_iconSize="70dp"
-			app:sparkbutton_inActiveImage="@drawable/inactive"
-			app:sparkbutton_primaryColor="@color/primary_color"
-			app:sparkbutton_secondaryColor="@color/secondary_color"
-			/>
-
-
-
-
-
-
+			<pl.droidsonroids.gif.GifImageView
+				android:id="@+id/sweep_gif"
+				android:layout_width="145dp"
+				android:layout_height="145dp"
+				android:src="@drawable/sweep"
+				android:layout_gravity="center"
+				android:visibility="gone"
+				/>
+		</FrameLayout>
 	</LinearLayout>
 
 </FrameLayout>
