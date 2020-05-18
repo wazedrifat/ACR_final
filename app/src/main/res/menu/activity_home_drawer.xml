@@ -22,7 +22,7 @@
 			android:title="@string/floor_mapping" />
 		<item
 			android:id="@+id/nav_KidMode"
-			android:icon="@drawable/kid_mode"
+			android:icon="@drawable/controller"
 			android:title="@string/kid_mode" />
 		<item
 			android:id="@+id/nav_analytics"

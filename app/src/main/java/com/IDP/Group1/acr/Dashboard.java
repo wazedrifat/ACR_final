@@ -24,6 +24,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.GridView;
@@ -52,12 +53,13 @@ public class Dashboard extends Fragment {
 	private User user;
 	ImageView cleanImage;
 	pl.droidsonroids.gif.GifImageView cleanGif;
-
+	GridView gridView;
 	boolean isRecording;
 	ImageView alert,sleep,notification,mic,settings, battery;
 	TextView batteryText;
 	boolean isMicOn;
-
+	int[] images = {R.drawable.clean, R.drawable.schedule, R.drawable.floormapping, R.drawable.controller, R.drawable.analytics, R.drawable.objectdetect};
+	String[] titles = {"Clean", "Schedule", "Floor Mapping", "Manual Control", "Analytics", "Object Detection"};
 	public Dashboard() {
 		// Required empty public constructor
 	}
@@ -75,10 +77,49 @@ public class Dashboard extends Fragment {
 		cleanGif = V.findViewById(R.id.sweep_gif);
 		notification =V.findViewById(R.id.notificationID);
 		mic =V.findViewById(R.id.micID);
-
+		gridView = V.findViewById(R.id.dashboardGridViewID);
 		isMicOn = false;
 		isRecording = false;
 
+		custAdapter adapter = new custAdapter(getContext(), images, titles);
+		gridView.setAdapter(adapter);
+
+		gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+				FragmentManager fragmentManager = getFragmentManager();
+				if (i == 0) {
+					Clean clean = new Clean();
+					fragmentManager.beginTransaction()
+								.replace(R.id.nav_host_fragment, clean).commit();
+				}
+				else if (i == 1) {
+					Shedule shedule = new Shedule();
+					fragmentManager.beginTransaction()
+							.replace(R.id.nav_host_fragment, shedule).commit();
+				}
+				else if (i == 2) {
+					FloorMapping floorMapping = new FloorMapping();
+					fragmentManager.beginTransaction()
+							.replace(R.id.nav_host_fragment, floorMapping).commit();
+				}
+				else if (i == 3) {
+					KidMode kidMode = new KidMode();
+					fragmentManager.beginTransaction()
+							.replace(R.id.nav_host_fragment, kidMode).commit();
+				}
+				else if (i == 4) {
+					Analytics analytics = new Analytics();
+					fragmentManager.beginTransaction()
+							.replace(R.id.nav_host_fragment, analytics).commit();
+				}
+				else if (i == 5) {
+					ObjectDetect objectDetect = new ObjectDetect();
+					fragmentManager.beginTransaction()
+							.replace(R.id.nav_host_fragment, objectDetect).commit();
+				}
+			}
+		});
 		cleanImage.setOnClickListener(new View.OnClickListener() {
 			@SuppressLint("ShowToast")
 			@Override

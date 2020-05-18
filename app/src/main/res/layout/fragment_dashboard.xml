@@ -7,22 +7,21 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	tools:context=".Dashboard">
 
-	<pl.droidsonroids.gif.GifImageView
-		android:layout_margin="20dp"
-		android:layout_width="match_parent"
-		android:layout_gravity="center_horizontal"
-		android:layout_height="220dp"
-		android:src="@drawable/giphy"
-		/>
-
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="vertical"
-		android:layout_gravity="center"
 		>
 
-
+		<pl.droidsonroids.gif.GifImageView
+			android:layout_margin="20dp"
+			android:layout_width="match_parent"
+			android:paddingEnd="20dp"
+			android:paddingStart="20dp"
+			android:layout_gravity="center_horizontal"
+			android:layout_height="150dp"
+			android:src="@drawable/giphy"
+			/>
 
 		<LinearLayout
 			android:padding="20dp"
@@ -77,21 +76,27 @@
 			android:layout_height="match_parent">
 			<ImageView
 				android:id="@+id/sweep_img"
-				android:layout_width="145dp"
-				android:layout_height="145dp"
+				android:layout_width="100dp"
+				android:layout_height="100dp"
 				android:src="@drawable/sweep_image"
 				android:layout_gravity="center"
 				/>
 
 			<pl.droidsonroids.gif.GifImageView
 				android:id="@+id/sweep_gif"
-				android:layout_width="145dp"
-				android:layout_height="145dp"
+				android:layout_width="100dp"
+				android:layout_height="100dp"
 				android:src="@drawable/sweep"
 				android:layout_gravity="center"
 				android:visibility="gone"
 				/>
 		</FrameLayout>
+
+		<GridView
+			android:id="@+id/dashboardGridViewID"
+			android:layout_width="match_parent"
+			android:numColumns="2"
+			android:layout_height="wrap_content"/>
 	</LinearLayout>
 
 </FrameLayout>
